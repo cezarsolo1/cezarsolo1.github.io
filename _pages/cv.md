@@ -62,9 +62,9 @@ Service and leadership
 
 Licenses
 ======
-A1/A3 EASA certificate
-Operator number - RDW
-Boat license C, D, S, Radio
+* A1/A3 EASA certificate
+* Operator number - RDW
+* Boat license C, D, S, Radio
 
 
   
