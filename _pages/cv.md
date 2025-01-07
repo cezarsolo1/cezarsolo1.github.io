@@ -56,15 +56,22 @@ Skills
 
 Service and leadership
 ======
-* Member in Rotaract Amsterdam International
-* Founder Interact Club Maris
+* Member Rotaract Amsterdam International
+* Member Rotary e-Club of Global Peace and Leadership
+* Founder Interact Club Maris Targu Mures
 * Member in League of Romanian Students Abroad
 
 Licenses
 ======
 * A1/A3 EASA certificate
 * Operator number - RDW
-* Boat license C, D, S, Radio
+  
+Hobbys
+======
+* Motorcycle 
+* Sailing
+* Skiing
+* Triathlon
 
 
   
