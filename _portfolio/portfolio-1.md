@@ -8,7 +8,7 @@ As humans, we have limits when it comes to speed and the altitude from which we 
 
 Flying my drone at speeds exceeding 120 km/h through narrow spaces is both thrilling and challenging, and I enjoy capturing dynamic footage, whether it’s driving a car or skiing. I believe the future of FPV drones is incredibly promising, and I'm excited to be part of this evolving field.
 <br/>
-<video width="300" controls>
+<video width="500" controls>
     <source src="/images/fpv.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
