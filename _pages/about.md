@@ -13,6 +13,5 @@ Since childhood, I’ve been fascinated by electronics and software—opening up
 
 As a student of Artificial Intelligence, I am committed to turning bold ideas into impactful solutions. My journey has included founding companies and gaining hands-on experience in robotics, automation, and finance, including at the Bucharest Stock Exchange. These experiences have honed my skills in technology and strategy, allowing me to create meaningful change through cutting-edge solutions.
 
-When I’m not exploring ways to automate and enhance perception for drones, I enjoy challenging myself with new projects that push the boundaries of what’s possible. I thrive on making a positive difference, one idea at a time.
-
+When I’m not exploring ways to automate and enhance perception for drones, I enjoy challenging myself with new projects that push the boundaries of what’s possible. You can check my portfolio, where you’ll find exciting projects like my robot hand that makes food and my drone that sees the world. I thrive on making a positive difference, one idea at a time.
 
