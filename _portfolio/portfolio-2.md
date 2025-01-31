@@ -1,6 +1,10 @@
 ---
 title: "Exploring the World with FPV Drones"
-excerpt: " Imagine seeing yourself from above—once impossible, but no longer. I build First Person View (FPV) drones to provide a fresh perspective, exploring new heights and angles.<br/><img src='/images/fpv.jpeg'>"
+excerpt: " Imagine seeing yourself from above—once impossible, but no longer. I build First Person View (FPV) drones to provide a fresh perspective, exploring new heights and angles.<br/>
+<video width="500" controls>
+    <source src="/images/fpv.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>"
 collection: portfolio
 ---
 
