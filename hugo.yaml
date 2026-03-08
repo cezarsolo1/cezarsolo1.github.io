@@ -19,8 +19,6 @@ params:
     enabled: true
     title: "Cezar Solovastru"
     subtitle: "Student at TU/e (Eindhoven) working on robotics and startups. Currently building MechTire — a robot that automates tire changes."
-    imageUrl: "images/profile.jpg"
-    imageTitle: "Cezar Solovastru"
     buttons:
       - name: Projects
         url: /projects
