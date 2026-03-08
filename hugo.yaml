@@ -1,0 +1,41 @@
+baseURL: "https://cezarsolovastru.com/"
+languageCode: "en-us"
+title: "Cezar Solovastru"
+theme: "PaperMod"
+paginate: 10
+
+params:
+  author: "Cezar Solovastru"
+  description: "Student at TU/e | Robotics & Startups"
+  defaultTheme: auto
+  ShowReadingTime: false
+  ShowShareButtons: false
+  ShowPostNavLinks: false
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: false
+  disableSpecial1stPost: true
+
+  profileMode:
+    enabled: true
+    title: "Cezar Solovastru"
+    subtitle: "Student at TU/e (Eindhoven) working on robotics and startups. Currently building MechTire — a robot that automates tire changes."
+    imageUrl: "images/profile.jpg"
+    imageTitle: "Cezar Solovastru"
+    buttons:
+      - name: Projects
+        url: /projects
+
+  socialIcons:
+    - name: linkedin
+      url: "https://www.linkedin.com/in/cezarsolovastru"
+    - name: email
+      url: "mailto:c.c.solovastru@student.tue.nl"
+
+menu:
+  main:
+    - name: About
+      url: /
+      weight: 1
+    - name: Projects
+      url: /projects/
+      weight: 2
