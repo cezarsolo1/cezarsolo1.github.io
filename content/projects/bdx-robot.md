@@ -3,6 +3,7 @@ title: "BDX Robot"
 date: 2025-02-01
 description: "Building a BDX bipedal robot — working on locomotion, control, and hardware integration."
 tags: ["robotics", "bipedal", "control"]
+image: "/images/bdx-robot.jpg"
 weight: 2
 ---
 

@@ -1,0 +1,179 @@
+{{ define "main" }}
+<style>
+  .main {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .scrolly-wrap {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .scrolly-left {
+    position: sticky;
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .project-text {
+    display: none;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    width: 70%;
+    max-width: 480px;
+  }
+
+  .project-text.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .project-text .year {
+    font-size: 0.85rem;
+    color: var(--secondary);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .project-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    color: var(--primary);
+    line-height: 1.2;
+  }
+
+  .project-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--secondary);
+    margin: 0;
+  }
+
+  .scrolly-right {
+    width: 50%;
+  }
+
+  .project-slide {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+    box-sizing: border-box;
+  }
+
+  .project-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    display: block;
+  }
+
+  .project-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: var(--tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: var(--secondary);
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 768px) {
+    .scrolly-wrap {
+      flex-direction: column;
+    }
+    .scrolly-left {
+      position: relative;
+      width: 100%;
+      height: auto;
+      padding: 40px 24px 0;
+    }
+    .project-text {
+      display: block !important;
+      opacity: 1 !important;
+      transform: none !important;
+      width: 100%;
+      max-width: 100%;
+    }
+    .scrolly-right {
+      width: 100%;
+    }
+    .project-slide {
+      height: auto;
+      padding: 24px;
+      margin-bottom: 40px;
+    }
+  }
+</style>
+
+<div class="scrolly-wrap">
+  <!-- Left: sticky text panel -->
+  <div class="scrolly-left">
+    {{ range $i, $p := .Pages }}
+    <div class="project-text {{ if eq $i 0 }}active{{ end }}" data-index="{{ $i }}">
+      <span class="year">{{ $p.Date.Format "2006" }}</span>
+      <h2>{{ $p.Title }}</h2>
+      <p>{{ $p.Params.description }}</p>
+    </div>
+    {{ end }}
+  </div>
+
+  <!-- Right: scrollable images -->
+  <div class="scrolly-right">
+    {{ range $i, $p := .Pages }}
+    <div class="project-slide" data-index="{{ $i }}">
+      {{ if $p.Params.image }}
+      <img src="{{ $p.Params.image }}" alt="{{ $p.Title }}">
+      {{ else }}
+      <div class="project-placeholder">{{ $p.Title }}</div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.project-slide');
+  const texts = document.querySelectorAll('.project-text');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const idx = entry.target.dataset.index;
+        texts.forEach(t => {
+          t.classList.remove('active');
+          t.style.display = 'none';
+        });
+        const active = document.querySelector(`.project-text[data-index="${idx}"]`);
+        active.style.display = 'block';
+        requestAnimationFrame(() => active.classList.add('active'));
+      }
+    });
+  }, { threshold: 0.5 });
+
+  slides.forEach(s => observer.observe(s));
+</script>
+{{ end }}
