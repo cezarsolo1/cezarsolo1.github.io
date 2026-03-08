@@ -63,6 +63,32 @@
     margin: 0;
   }
 
+  .project-meta {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px solid var(--tertiary);
+    padding-top: 24px;
+  }
+
+  .meta-row {
+    display: flex;
+    gap: 16px;
+    font-size: 0.9rem;
+    color: var(--secondary);
+  }
+
+  .meta-label {
+    min-width: 60px;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    padding-top: 1px;
+  }
+
   .scrolly-right {
     width: 50%;
   }
@@ -137,6 +163,9 @@
       <span class="year">{{ $p.Date.Format "2006" }}</span>
       <h2>{{ $p.Title }}</h2>
       <p>{{ $p.Params.description }}</p>
+      <div class="project-meta">
+        {{ with $p.Params.role }}<div class="meta-row"><span class="meta-label">Role</span><span>{{ . }}</span></div>{{ end }}
+      </div>
     </div>
     {{ end }}
   </div>
