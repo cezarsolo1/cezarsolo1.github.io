@@ -166,6 +166,7 @@
       <p>{{ $p.Params.description }}</p>
       <div class="project-meta">
         {{ with $p.Params.role }}<div class="meta-row"><span class="meta-label">Role</span><span>{{ . }}</span></div>{{ end }}
+        {{ with $p.Params.roledesc }}<div class="meta-row"><span class="meta-label"></span><span>{{ . }}</span></div>{{ end }}
       </div>
     </div>
     {{ end }}
