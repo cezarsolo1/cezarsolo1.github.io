@@ -128,30 +128,84 @@
     letter-spacing: 0.05em;
   }
 
+  .mobile-projects {
+    display: none;
+  }
+
   @media (max-width: 768px) {
     .scrolly-wrap {
+      display: none;
+    }
+
+    .mobile-projects {
+      display: block;
+      padding: 0;
+    }
+
+    .mobile-project {
+      margin-bottom: 64px;
+    }
+
+    .mobile-project-media img,
+    .mobile-project-media video {
+      width: 100%;
+      height: 60vw;
+      object-fit: cover;
+      display: block;
+    }
+
+    .mobile-project-text {
+      padding: 24px 20px;
+    }
+
+    .mobile-project-text .year {
+      font-size: 0.8rem;
+      color: var(--secondary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .mobile-project-text h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0 0 12px 0;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+
+    .mobile-project-text p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--secondary);
+      margin: 0;
+    }
+
+    .mobile-project-meta {
+      margin-top: 20px;
+      display: flex;
       flex-direction: column;
+      gap: 8px;
+      border-top: 1px solid var(--tertiary);
+      padding-top: 16px;
     }
-    .scrolly-left {
-      position: relative;
-      width: 100%;
-      height: auto;
-      padding: 40px 24px 0;
+
+    .mobile-meta-row {
+      display: flex;
+      gap: 12px;
+      font-size: 0.85rem;
+      color: var(--secondary);
     }
-    .project-text {
-      display: block !important;
-      opacity: 1 !important;
-      transform: none !important;
-      width: 100%;
-      max-width: 100%;
-    }
-    .scrolly-right {
-      width: 100%;
-    }
-    .project-slide {
-      height: auto;
-      padding: 24px;
-      margin-bottom: 40px;
+
+    .mobile-meta-label {
+      min-width: 50px;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      padding-top: 2px;
     }
   }
 </style>
@@ -186,6 +240,32 @@
     </div>
     {{ end }}
   </div>
+</div>
+
+<!-- Mobile layout -->
+<div class="mobile-projects">
+  {{ range .Pages }}
+  <div class="mobile-project">
+    <div class="mobile-project-media">
+      {{ if .Params.video }}
+      <video src="{{ strings.TrimLeft "/" .Params.video | relURL }}" autoplay loop muted playsinline></video>
+      {{ else if .Params.image }}
+      <img src="{{ strings.TrimLeft "/" .Params.image | relURL }}" alt="{{ .Title }}">
+      {{ end }}
+    </div>
+    <div class="mobile-project-text">
+      <span class="year">{{ .Date.Format "2006" }}</span>
+      <h2>{{ .Title }}</h2>
+      <p>{{ .Params.description }}</p>
+      {{ if or .Params.role .Params.roledesc }}
+      <div class="mobile-project-meta">
+        {{ with .Params.role }}<div class="mobile-meta-row"><span class="mobile-meta-label">Role</span><span>{{ . }}</span></div>{{ end }}
+        {{ with .Params.roledesc }}<div class="mobile-meta-row"><span class="mobile-meta-label"></span><span>{{ . }}</span></div>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
 </div>
 
 <script>
