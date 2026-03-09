@@ -18,7 +18,7 @@ params:
   profileMode:
     enabled: true
     title: "Cezar Solovastru"
-    subtitle: "Student at TU/e (Eindhoven) who builds things that move. Currently teaching humanoid robots to play soccer at TechUnited. From FPV drones and autonomous sensing to robotic arms — I like picking hard problems and figuring them out hands-on."
+    subtitle: "Student at TU/e (Eindhoven) who builds things that move. Currently teaching humanoid robots to play soccer at TechUnited. From FPV drones and autonomous sensing to robotic arms, I like picking hard problems and figuring them out hands-on."
     buttons:
       - name: Projects
         url: /projects
