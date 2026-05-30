@@ -1,0 +1,142 @@
+<style>
+/* Pull profile content toward top instead of vertically centering */
+.main .profile {
+    min-height: unset;
+    padding: 40px 0 20px;
+}
+
+/* Competitions section */
+.competitions-section {
+    width: 100%;
+    max-width: var(--main-width, 760px);
+    margin: 32px auto 0;
+    padding: 0 var(--gap, 24px);
+}
+
+.competitions-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.competitions-label span {
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    white-space: nowrap;
+}
+
+.competitions-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+.competitions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.comp-card {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform .2s, border-color .2s;
+}
+
+.comp-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--secondary);
+}
+
+.comp-card-img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    display: block;
+}
+
+.comp-card-body {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+}
+
+.comp-card-badge {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: #e2b84a;
+}
+
+.comp-card-title {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--primary);
+}
+
+.comp-card-desc {
+    font-size: 12px;
+    color: var(--secondary);
+    line-height: 1.5;
+    flex: 1;
+}
+
+.comp-card-sponsors {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.comp-card-sponsors-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--secondary);
+}
+
+.comp-sponsor-logo {
+    height: 18px;
+    width: auto;
+    object-fit: contain;
+    opacity: .7;
+    filter: grayscale(1);
+    transition: opacity .2s, filter .2s;
+}
+
+.comp-sponsor-logo:hover {
+    opacity: 1;
+    filter: none;
+}
+
+.comp-sponsor-pill {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .05em;
+    color: var(--secondary);
+    background: var(--code-bg);
+    border-radius: 4px;
+    padding: 2px 7px;
+}
+
+@media (max-width: 600px) {
+    .competitions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
